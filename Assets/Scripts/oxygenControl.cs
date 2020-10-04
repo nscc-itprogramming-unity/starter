@@ -23,7 +23,7 @@ public class oxygenControl : MonoBehaviour
         //drains oxygen bar
         if (oxygen.value > 0)
         {
-            oxygen.value -= 0.003f;
+            oxygen.value -= 2 * Time.deltaTime;
         }
         //checks if suffocated
         if(oxygen.value <= 0)
