@@ -19,17 +19,10 @@ public class oxygenControl : MonoBehaviour
     {
         //relates the oxygen bar value to the oxygen value
         oxygenBar.value = inspiration.value;
+    }
 
-        //drains oxygen bar
-        if (inspiration.value > 0)
-        {
-            inspiration.value -= 2 * Time.deltaTime;
-        }
-        //checks if suffocated
-        if(inspiration.value <= 0)
-        {
-            Time.timeScale = 0;
-            youDied.SetActive(true);
-        }
+    void Reduce(int amount)
+    {
+        oxygen.value -= amount;
     }
 }
