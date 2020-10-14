@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 3952074650771926418}
   - component: {fileID: 3952074650771926419}
   - component: {fileID: 3952074650771926428}
-  - component: {fileID: 1574438901387513329}
+  - component: {fileID: 6456595940099949946}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Untagged
@@ -146,7 +146,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 4, y: 4}
   m_EdgeRadius: 0
---- !u!114 &1574438901387513329
+--- !u!114 &6456595940099949946
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
