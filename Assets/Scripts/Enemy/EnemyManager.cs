@@ -1,6 +1,11 @@
 ﻿using UnityEngine;
 using System.Collections.Generic;
 
+/**
+ * This class is responsible for spawning and despawning enemy entities.
+ * 
+ * @author Jason MacKeigan
+ */
 public class EnemyManager : MonoBehaviour
 {
 
@@ -11,9 +16,13 @@ public class EnemyManager : MonoBehaviour
 
     public float spawnY;
 
+    public float spawnCapacity;
+
     public GameObject enemyPrefab;
 
     private float nextSpawn;
+
+    private int spawned;
 
     void Start()
     {
@@ -24,13 +33,15 @@ public class EnemyManager : MonoBehaviour
     {
         nextSpawn -= Time.deltaTime;
 
-        if (nextSpawn <= 0)
+        if (nextSpawn <= 0 && spawned <= 0)
         {
             nextSpawn = spawnDelay;
 
             GameObject enemy = Instantiate(enemyPrefab);
 
             enemy.transform.position = new Vector2(spawnX, spawnY);
+
+            spawned++;
         }
     }
 }
