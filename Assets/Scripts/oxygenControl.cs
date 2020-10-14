@@ -21,15 +21,20 @@ public class oxygenControl : MonoBehaviour
         oxygenBar.value = oxygen.value;
 
         //drains oxygen bar
-        if (oxygen.value > 0)
-        {
-            oxygen.value -= 0.003f;
-        }
+        //if (oxygen.value > 0)
+        //{
+        //    oxygen.value -= 0.003f;
+        //}
         //checks if suffocated
         if(oxygen.value <= 0)
         {
             Time.timeScale = 0;
             youDied.SetActive(true);
         }
+    }
+
+    void Reduce(int amount)
+    {
+        oxygen.value -= amount;
     }
 }
