@@ -3,7 +3,7 @@
 public class Player : MonoBehaviour
 {
 
-    public floatValue inspiration;
+    public FloatValue inspiration;
 
     void Start()
     {
@@ -11,11 +11,6 @@ public class Player : MonoBehaviour
     }
 
     void Update()
-    {
-
-    }
-
-    private void OnInspirationEmpty()
     {
 
     }
@@ -31,11 +26,6 @@ public class Player : MonoBehaviour
             amount = inspiration.value;
         }
         inspiration.value -= amount;
-
-        if (inspiration.value <= 0.0)
-        {
-            OnInspirationEmpty();
-        }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -45,7 +35,7 @@ public class Player : MonoBehaviour
         if (collided.tag == "Enemy")
         {
             //TODO amount is arbitrary/hardcoded, add something definitive
-            ReduceInspiration(10);
+            ReduceInspiration(50);
             Destroy(collided);
         }
     }

@@ -1,6 +1,4 @@
 ﻿using UnityEngine;
-using System.Collections.Generic;
-
 /**
  * This class is responsible for spawning and despawning enemy entities.
  * 
@@ -20,18 +18,16 @@ public class EnemyManager : MonoBehaviour
 
     private float nextSpawn;
 
-    private int spawned;
-
-    public floatValue inspirtation;
+    public FloatValue inspiration;
 
     void Start()
     {
-    
+
     }
 
     void Update()
     {
-        if (inspirtation.value <= 0)
+        if (inspiration.value <= 0)
         {
             return;
         }
@@ -45,8 +41,21 @@ public class EnemyManager : MonoBehaviour
             GameObject enemy = Instantiate(enemyPrefab);
 
             enemy.transform.position = new Vector2(spawnX, spawnY);
-
-            spawned++;
         }
     }
+
+    void OnDisable()
+    {
+        print("Disabling enemy controller.");
+
+        Enemy[] enemies = FindObjectsOfType<Enemy>();
+
+        print("Length of enemies: " + enemies.Length);
+
+        foreach (Enemy enemy in enemies)
+        {
+            Destroy(enemy.gameObject);
+        }
+    }
+    
 }

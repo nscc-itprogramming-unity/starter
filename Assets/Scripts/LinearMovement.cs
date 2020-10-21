@@ -10,7 +10,7 @@ public class LinearMovement : MonoBehaviour
 {
 
 
-    [Range(0.0f, 1.0f)]
+    [Range(0.0f, 8f)]
     public float speed;
 
     private new Rigidbody2D rigidbody;
