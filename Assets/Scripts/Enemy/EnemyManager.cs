@@ -16,13 +16,13 @@ public class EnemyManager : MonoBehaviour
 
     public float spawnY;
 
-    public float spawnCapacity;
-
     public GameObject enemyPrefab;
 
     private float nextSpawn;
 
     private int spawned;
+
+    public floatValue inspirtation;
 
     void Start()
     {
@@ -31,9 +31,14 @@ public class EnemyManager : MonoBehaviour
 
     void Update()
     {
+        if (inspirtation.value <= 0)
+        {
+            return;
+        }
         nextSpawn -= Time.deltaTime;
 
-        if (nextSpawn <= 0 && spawned <= 0)
+
+        if (nextSpawn <= 0)
         {
             nextSpawn = spawnDelay;
 

@@ -12,6 +12,7 @@ public class oxygenControl : MonoBehaviour
     void Start()
     {
         inspiration.value = 100;
+        youDied.SetActive(false);
     }
 
     // Update is called once per frame
@@ -23,6 +24,6 @@ public class oxygenControl : MonoBehaviour
 
     void Reduce(int amount)
     {
-        oxygen.value -= amount;
+        inspiration.value -= amount;
     }
 }
