@@ -25,9 +25,25 @@ public class KeystrokeController : MonoBehaviour
         Vector3 tempVect = new Vector3(h, v, 0);
         tempVect = tempVect.normalized * speed * Time.deltaTime;
         rb.MovePosition(rb.transform.position + tempVect);
+
+        if (Input.GetKey("q")) {
+            RotateLeft();
+        }
+
+        if (Input.GetKey("e")) {
+            RotateRight();
+        }
     }
 
     void FixedUpdate() {
         rb.MovePosition(rb.position + moveVelocity * Time.fixedDeltaTime);
+    }
+
+    void RotateLeft() {
+        transform.Rotate(Vector3.forward * -1);
+    }
+
+    void RotateRight() {
+        transform.Rotate(Vector3.forward * 1);
     }
 }
