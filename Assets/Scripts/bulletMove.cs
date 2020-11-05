@@ -14,6 +14,7 @@ public class bulletMove : MonoBehaviour
     void Start()
     {
         rb.velocity = transform.right * speed;
+        Destroy(gameObject, 2);
     }
 
 
@@ -24,9 +25,6 @@ public class bulletMove : MonoBehaviour
         {
             enemy.TakeDamage(damage);
         }
-        
-        
-        Debug.Log(hitInfo.name);
         Destroy(gameObject);
     }
 
